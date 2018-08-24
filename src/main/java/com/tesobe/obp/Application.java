@@ -10,6 +10,7 @@ import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
 @EnableFeignClients
+
 public class Application {
     public static final String ISO8601_TIMESTAMP_FORMAT = "yyyy-MM-dd\'T\'HH:mm:ss\'Z\'";
 

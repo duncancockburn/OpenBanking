@@ -12,6 +12,7 @@ public class AddAuthRequestInterceptor implements RequestInterceptor {
     @Value("${obp.api.directLoginPath}")
     private String directLoginPath;
 
+
     @Override
     public void apply(RequestTemplate template) {
         //skip login request, no auth context to add.

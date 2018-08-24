@@ -46,6 +46,54 @@ public class Transaction {
         @JsonProperty("value")
         @JsonDeserialize(using = MoneyJson.MoneyDeserializer.class)
         private Money value;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Date getPostedDate() {
+            return postedDate;
+        }
+
+        public void setPostedDate(Date postedDate) {
+            this.postedDate = postedDate;
+        }
+
+        public Date getCompletedDate() {
+            return completedDate;
+        }
+
+        public void setCompletedDate(Date completedDate) {
+            this.completedDate = completedDate;
+        }
+
+        public Money getNewBalance() {
+            return newBalance;
+        }
+
+        public void setNewBalance(Money newBalance) {
+            this.newBalance = newBalance;
+        }
+
+        public Money getValue() {
+            return value;
+        }
+
+        public void setValue(Money value) {
+            this.value = value;
+        }
     }
 
     @Data
@@ -57,6 +105,46 @@ public class Transaction {
 
         @JsonProperty("where")
         private Location location;
+
+        public String getNarrative() {
+            return narrative;
+        }
+
+        public void setNarrative(String narrative) {
+            this.narrative = narrative;
+        }
+
+        public List<Object> getComments() {
+            return comments;
+        }
+
+        public void setComments(List<Object> comments) {
+            this.comments = comments;
+        }
+
+        public List<Tag> getTags() {
+            return tags;
+        }
+
+        public void setTags(List<Tag> tags) {
+            this.tags = tags;
+        }
+
+        public List<Image> getImages() {
+            return images;
+        }
+
+        public void setImages(List<Image> images) {
+            this.images = images;
+        }
+
+        public Location getLocation() {
+            return location;
+        }
+
+        public void setLocation(Location location) {
+            this.location = location;
+        }
     }
 
     @Data
@@ -72,6 +160,30 @@ public class Transaction {
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = Application.ISO8601_TIMESTAMP_FORMAT, timezone = "UTC")
         @JsonProperty("date")
         private Date createdAt;
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Date getCreatedAt() {
+            return createdAt;
+        }
+
+        public void setCreatedAt(Date createdAt) {
+            this.createdAt = createdAt;
+        }
 
         @Override
         public boolean equals(Object o) {
@@ -93,5 +205,13 @@ public class Transaction {
     public static class Image {
         @JsonProperty("image_URL")
         private String imageUrl;
+
+        public String getImageUrl() {
+            return imageUrl;
+        }
+
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
     }
 }

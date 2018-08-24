@@ -21,6 +21,7 @@ public interface ObpApiClient {
     @RequestMapping(method = RequestMethod.GET, value = "my/accounts")
     List<Account> getPrivateAccountsNoDetails();
 
+
     default List<Account> getPrivateAccountsWithDetails() {
         List<Account> accountsNoDetails = getPrivateAccountsNoDetails();
         return accountsNoDetails.stream().map(account -> getAccount(account.getBankId(), account.getId())).collect(Collectors.toList());
